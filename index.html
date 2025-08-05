@@ -9,6 +9,10 @@
         font-family: 'Star Jedi';
         src: url('fonts/Starjedi.ttf') format('truetype');
     }
+    @font-face {
+        font-family: 'Star Jedi Hollow';
+        src: url('fonts/Starjhol.ttf') format('truetype');
+    }
     body {
         margin: 0;
         background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
@@ -68,7 +72,13 @@
         margin-bottom: 30px;
     }
     .title {
+        font-family: 'Star Jedi Hollow', sans-serif;
         font-size: clamp(1.6em, 4vw, 2.5em);
+        margin-bottom: 5px;
+    }
+    .subtitle {
+        font-family: 'Star Jedi Hollow', sans-serif;
+        font-size: clamp(1.4em, 3.5vw, 2.2em);
         margin-bottom: 20px;
     }
     .final-screen {
@@ -119,18 +129,18 @@
 <div class="star-wars-intro" id="star-wars-intro">
     <div class="crawl">
         <p class="intro-text">A long time ago in a galaxy far, far away...</p>
-        <p class="title">EPISODIO I</p>
-        <p class="title">O DESPERTAR DE PIRINDUCA</p>
-        <p>No pacifico sistema estelar do bairro Zulu, em Niteroi, o destino tramou algo inesperado durante a festa de aniversario do irmao da futura heroina desta historia.</p>
-        <p>Foi nessa ocasiao que o intrepido Theoleoleo, mestre dos codigos e guardiao de playlists epicas, conheceu sua futura parceira Jedi: a doce e destemida Gatinha. No inicio, essa uniao parecia arriscada — afinal, ela era irma de um de seus aliados mais proximos — mas a Forca tinha outros planos.</p>
-        <p>Desde o primeiro dia, tudo foi facil. Risadas fluiam como naves no hiperespaco, noites inteiras eram passadas em transmissoes holograficas (tambem conhecidas como chamadas de video) e o carinho crescia a cada parsec.</p>
-        <p>Mesmo vivendo em sistemas estelares distantes, nada conseguiu impedir essa conexao. Agora, Theoleoleo prepara-se para uma nova jornada: mudar-se para Niteroi e lutar lado a lado com Gatinha contra qualquer ameaca a galaxia... e ao coracao deles.</p>
+        <p class="title">EPISÓDIO I</p>
+        <p class="subtitle">O DESPERTAR DE PIRINDUCA</p>
+        <p>No pacífico sistema estelar do bairro Zulu, em Niterói, o destino tramou algo inesperado durante a festa de aniversário do irmão da futura heroína desta história.</p>
+        <p>Foi nessa ocasião que o intrépido Theoleoleo, mestre dos códigos e guardião de playlists épicas, conheceu sua futura parceira Jedi: a doce e destemida Gatinha. No início, essa união parecia arriscada — afinal, ela era irmã de um de seus aliados mais próximos — mas a Força tinha outros planos.</p>
+        <p>Desde o primeiro dia, tudo foi fácil. Risadas fluíam como naves no hiperespaço, noites inteiras eram passadas em transmissões holográficas (também conhecidas como chamadas de vídeo) e o carinho crescia a cada parsec.</p>
+        <p>Mesmo vivendo em sistemas estelares distantes, nada conseguiu impedir essa conexão. Agora, Theoleoleo prepara-se para uma nova jornada: mudar-se para Niterói e lutar lado a lado com Gatinha contra qualquer ameaça à galáxia... e ao coração deles.</p>
     </div>
 </div>
 
 <!-- Tela final -->
 <div class="final-screen" id="final">
-    <div class="final-text">Gatinha, que a Forca una nossos coracoes para sempre. Quer namorar comigo?</div>
+    <div class="final-text">Gatinha, que a Força una nossos corações para sempre. Quer namorar comigo?</div>
     <div class="final-photo">
         <img src="img/Linguinha_praia.jpg" alt="Foto Linguinha na Praia">
     </div>
@@ -142,7 +152,7 @@
     setTimeout(() => {
         document.getElementById('intro-text').classList.add('fade-out');
         setTimeout(() => {
-            document.getElementById('intro-screen').innerHTML = '<button id="start-btn" class="start-btn">Iniciar Transmissao</button>';
+            document.getElementById('intro-screen').innerHTML = '<button id="start-btn" class="start-btn">Iniciar Transmissão</button>';
             document.getElementById('start-btn').addEventListener('click', startTransmission);
         }, 1000);
     }, 1000);
