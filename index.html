@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O Despertar de Pirinduca</title>
-<link href="https://fonts.cdnfonts.com/css/star-jedi" rel="stylesheet">
 <style>
+    @font-face {
+        font-family: 'Star Jedi';
+        src: url('fonts/Starjedi.ttf') format('truetype');
+    }
     body {
         margin: 0;
         background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
@@ -80,24 +83,15 @@
         text-align: center;
         padding: 20px;
     }
-    .final-photos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 900px;
-    }
-    .final-screen img {
+    .final-photo img {
         width: 100%;
-        max-width: 280px;
-        margin: 10px;
+        max-width: 500px;
         border: 3px solid yellow;
         border-radius: 10px;
         opacity: 0;
         animation: fadeIn 2s ease-in forwards;
+        animation-delay: 0.5s;
     }
-    .final-screen img:nth-child(1) { animation-delay: 0.5s; }
-    .final-screen img:nth-child(2) { animation-delay: 1s; }
-    .final-screen img:nth-child(3) { animation-delay: 1.5s; }
     .final-text {
         font-size: clamp(1.4em, 3.5vw, 2.4em);
         margin-bottom: 20px;
@@ -136,17 +130,14 @@
 <!-- Tela final -->
 <div class="final-screen" id="final">
     <div class="final-text">Gatinha, que a Força una nossos corações para sempre. Quer namorar comigo?</div>
-    <div class="final-photos">
-        <img src="img/Elevador.jpg" alt="Foto 1">
-        <img src="img/Linguinha_praia.jpg" alt="Foto 2">
-        <img src="img/Sao_Bento.jpg" alt="Foto 3">
+    <div class="final-photo">
+        <img src="img/Linguinha_praia.jpg" alt="Foto Linguinha na Praia">
     </div>
 </div>
 
 <script>
     const theme = document.getElementById('theme');
 
-    // Mostra botão mais rápido
     setTimeout(() => {
         document.getElementById('intro-text').classList.add('fade-out');
         setTimeout(() => {
