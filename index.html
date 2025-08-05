@@ -22,23 +22,13 @@
         height: 100vh;
         text-align: center;
     }
-    .fade {
-        animation: fadeIn 2s ease-in forwards;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    .fade-out {
-        animation: fadeOut 2s ease-out forwards;
-    }
-    @keyframes fadeOut {
-        from { opacity: 1; }
-        to { opacity: 0; }
-    }
+    .fade { animation: fadeIn 1.5s ease-in forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .fade-out { animation: fadeOut 1s ease-out forwards; }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
     .start-btn {
         padding: 15px 30px;
-        font-size: 1.5em;
+        font-size: clamp(1.2em, 4vw, 2em);
         background: yellow;
         color: black;
         border: none;
@@ -56,26 +46,26 @@
     .crawl {
         position: absolute;
         bottom: -200%;
-        width: 90%;
+        width: 85%;
         max-width: 900px;
         left: 50%;
         transform: translateX(-50%) rotateX(20deg);
         transform-origin: 50% 100%;
         animation: crawl 60s linear forwards;
         text-align: center;
-        font-size: clamp(1em, 3vw, 2em);
-        line-height: 1.6;
+        font-size: clamp(1.2em, 3.5vw, 2.2em);
+        line-height: 1.8;
     }
     @keyframes crawl {
         0% { bottom: -200%; }
         100% { bottom: 100%; }
     }
     .intro-text {
-        font-size: clamp(1em, 2.5vw, 1.5em);
+        font-size: clamp(1.4em, 3vw, 2em);
         margin-bottom: 30px;
     }
     .title {
-        font-size: clamp(1.2em, 3vw, 2em);
+        font-size: clamp(1.6em, 4vw, 2.5em);
         margin-bottom: 20px;
     }
     .final-screen {
@@ -109,7 +99,7 @@
     .final-screen img:nth-child(2) { animation-delay: 1s; }
     .final-screen img:nth-child(3) { animation-delay: 1.5s; }
     .final-text {
-        font-size: clamp(1.2em, 3vw, 2em);
+        font-size: clamp(1.4em, 3.5vw, 2.4em);
         margin-bottom: 20px;
         color: yellow;
         opacity: 0;
@@ -121,7 +111,7 @@
 
 <!-- Tela inicial -->
 <div id="intro-screen" class="center-screen">
-    <div id="intro-text" class="fade" style="color:white; font-size:1.5em;">
+    <div id="intro-text" class="fade" style="color:white; font-size:clamp(1.2em, 4vw, 2em);">
         A long time ago in a galaxy far,<br> far away...
     </div>
 </div>
@@ -136,10 +126,10 @@
     <div class="crawl">
         <p class="intro-text">A long time ago in a galaxy far, far away...</p>
         <p class="title">EPISÓDIO I<br>O DESPERTAR DE PIRINDUCA</p>
-        <p>No pacífico sistema estelar do bairro Zulu, em Niterói, o destino tramou algo inesperado durante a celebração de um jovem padawan — o aniversário do irmão da futura heroína desta história.</p>
-        <p>Foi lá que o intrépido Theoleoleo, mestre dos códigos e guardião de playlists épicas, conheceu sua futura parceira Jedi, a doce e destemida Gatinha. No início, essa união parecia arriscada — afinal, ela era irmã de um de seus aliados mais próximos — mas a Força tinha outros planos.</p>
-        <p>Rapidamente, algo poderoso surgiu entre eles. Desde o primeiro dia, tudo foi fácil: risadas fluíam como naves no hiperespaço, conversas atravessavam noites inteiras em transmissões holográficas (também conhecidas como chamadas de vídeo), e o carinho crescia a cada parsec.</p>
-        <p>Mesmo morando em sistemas estelares distantes, nada conseguiu impedir essa conexão. Agora, Theoleoleo prepara-se para uma nova jornada: mudar-se para Niterói e lutar lado a lado com Gatinha contra qualquer ameaça à galáxia... e ao coração deles.</p>
+        <p>No pacífico sistema estelar do bairro Zulu, em Niterói, o destino tramou algo inesperado durante a festa de aniversário do irmão da futura heroína desta história.</p>
+        <p>Foi nessa ocasião que o intrépido Theoleoleo, mestre dos códigos e guardião de playlists épicas, conheceu sua futura parceira Jedi: a doce e destemida Gatinha. No início, essa união parecia arriscada — afinal, ela era irmã de um de seus aliados mais próximos — mas a Força tinha outros planos.</p>
+        <p>Desde o primeiro dia, tudo foi fácil. Risadas fluíam como naves no hiperespaço, noites inteiras eram passadas em transmissões holográficas (também conhecidas como chamadas de vídeo) e o carinho crescia a cada parsec.</p>
+        <p>Mesmo vivendo em sistemas estelares distantes, nada conseguiu impedir essa conexão. Agora, Theoleoleo prepara-se para uma nova jornada: mudar-se para Niterói e lutar lado a lado com Gatinha contra qualquer ameaça à galáxia... e ao coração deles.</p>
     </div>
 </div>
 
@@ -156,14 +146,14 @@
 <script>
     const theme = document.getElementById('theme');
 
-    // Mostra botão após fade-out do texto inicial
+    // Mostra botão mais rápido
     setTimeout(() => {
         document.getElementById('intro-text').classList.add('fade-out');
         setTimeout(() => {
             document.getElementById('intro-screen').innerHTML = '<button id="start-btn" class="start-btn">Iniciar Transmissão</button>';
             document.getElementById('start-btn').addEventListener('click', startTransmission);
-        }, 2000);
-    }, 2500);
+        }, 1000);
+    }, 1000);
 
     function startTransmission() {
         document.getElementById('intro-screen').style.display = 'none';
@@ -173,7 +163,7 @@
             theme.pause();
             document.getElementById('star-wars-intro').style.display = 'none';
             document.getElementById('final').style.display = 'flex';
-        }, 60000); // 60 segundos
+        }, 60000);
     }
 </script>
 
